@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="89fcd828-9c06-467a-b2ee-27b0d06524b9" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ClassicCards/ClassicCardDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassicCards/ClassicCardDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GoFish/GoFish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoFish/GoFish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GoFish/GoFishDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoFish/GoFishDeck.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GoFish/GoFishPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoFish/GoFishPlayer.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Enum" />
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2cjkEHtF83ySKEWGRpdfVZbuJHr" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="ClassicCards" />
+      <recent name="Generics" />
+      <recent name="GoFish" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="89fcd828-9c06-467a-b2ee-27b0d06524b9" name="Default Changelist" comment="" />
+      <created>1708632261790</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1708632261790</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Added Conversion from enum to int in ClassicCards package.">
+      <created>1709591375078</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1709591375078</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added compareTo and primitive accessor methods for Card's value and type">
+      <created>1709591415815</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1709591415815</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Added toString methods and Changed int conversion as an instance method instead of static method">
+      <created>1709592196509</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1709592196509</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added names to GoFish players in order for better choosing during game">
+      <created>1709592887482</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1709592887482</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Conversion from enum to int in ClassicCards package." />
+    <MESSAGE value="Added compareTo and primitive accessor methods for Card's value and type" />
+    <MESSAGE value="Added toString methods and Changed int conversion as an instance method instead of static method" />
+    <MESSAGE value="Added names to GoFish players in order for better choosing during game" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added names to GoFish players in order for better choosing during game" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1709590588999">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1709590588999" />
+    <state x="499" y="188" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1708639029411">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="499" y="188" key="#com.intellij.ide.util.PackageChooserDialog/0.0.1536.816@0.0.1536.816" timestamp="1708639029411" />
+    <state x="566" y="293" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1708639063557">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="566" y="293" width="403" height="236" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.816@0.0.1536.816" timestamp="1708639063557" />
+    <state x="523" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1708640612262">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="523" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.816@0.0.1536.816" timestamp="1708640612262" />
+    <state x="424" y="3" key="CommitChangelistDialog2" timestamp="1709592886869">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="424" y="3" key="CommitChangelistDialog2/0.0.1536.816@0.0.1536.816" timestamp="1709592886869" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1709653776394">
+      <screen x="0" y="0" width="1536" height="816" />
+    </state>
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.816@0.0.1536.816" timestamp="1709653776394" />
+  </component>
+</project>
