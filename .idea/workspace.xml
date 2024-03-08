@@ -3,10 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="89fcd828-9c06-467a-b2ee-27b0d06524b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassicCards/ClassicCardDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassicCards/ClassicCardDeck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GoFish/GoFish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoFish/GoFish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GoFish/GoFishDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoFish/GoFishDeck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GoFish/GoFishPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoFish/GoFishPlayer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Interfaces/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Interfaces/Player.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -34,6 +33,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
