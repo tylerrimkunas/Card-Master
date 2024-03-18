@@ -27,7 +27,7 @@ public class GoFish implements Game {
             // TODO: show player's cards, prompt for asking which card to pick and who to ask, receive answer
             ClassicCardValue value = ClassicCardValue.KING;
             GoFishPlayer p = players.get(1);
-            if(p.has(value));
+            if(p.has(value) > 0);
             if(deck.getTopCard() == null) {
                 isDone = true;
             }
@@ -60,7 +60,7 @@ public class GoFish implements Game {
     }
 
     private int ask(int value, GoFishPlayer p) {
-
+        return 0;
     }
 
 }
