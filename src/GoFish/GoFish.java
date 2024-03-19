@@ -32,13 +32,14 @@ public class GoFish implements Game {
             int valueCount = askedPlayer.has(value);
             if(valueCount > 0) { //asked player has cards with that rank case
                 ClassicCard[] transferredCards = askedPlayer.loseCards(valueCount, value);
+                //TODO: show cards in command line
                 activePlayer.gainCards(transferredCards);
                 continue; //Repeat active player's turn
             }
             else if(deck.getTopCard() != null){ //Go Fish case
                 activePlayer.gainCard((ClassicCard) deck.takeCard());
             } 
-            if(deck.getTopCard() == null) {
+            if(isGameOver()) {
                 isDone = true;
             }
             else {
@@ -67,6 +68,16 @@ public class GoFish implements Game {
             }
         }
         return winner;
+    }
+
+    public boolean isGameOver() {
+        if(deck.getTopCard() != null)
+            return false;
+        for(GoFishPlayer p: players) {
+            if(p.getCards() != null)
+                return false;
+        }
+        return true;
     }
 
 }

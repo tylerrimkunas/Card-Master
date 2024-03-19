@@ -3,9 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="89fcd828-9c06-467a-b2ee-27b0d06524b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/ClassicCards/ClassicCardDeck.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ClassicCards/ClassicCardDeck.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/GoFish/GoFish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoFish/GoFish.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GoFish/GoFishPlayer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoFish/GoFishPlayer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +93,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710803768715</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Fixed redundancies, Add gaining and losing card(s). More implementation of how game function.">
+      <created>1710809915687</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1710809915687</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -105,7 +110,8 @@
     <MESSAGE value="Added names to GoFish players in order for better choosing during game" />
     <MESSAGE value="Added implementation of how GoFish is played and modifications/additions of methods to interact with players and the game. TODO: Add the Scanner class and I/O for the player to use. Possibly modify to use generic functions in main and not need the play() method" />
     <MESSAGE value="Fixed Compile time errors in GoFish.java" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed Compile time errors in GoFish.java" />
+    <MESSAGE value="Fixed redundancies, Add gaining and losing card(s). More implementation of how game function." />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed redundancies, Add gaining and losing card(s). More implementation of how game function." />
   </component>
   <component name="WindowStateProjectService">
     <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1709590588999">
@@ -124,10 +130,10 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="523" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.816@0.0.1536.816" timestamp="1708640612262" />
-    <state x="0" y="3" key="CommitChangelistDialog2" timestamp="1710803767726">
+    <state x="0" y="3" key="CommitChangelistDialog2" timestamp="1710809914999">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="0" y="3" key="CommitChangelistDialog2/0.0.1536.816@0.0.1536.816" timestamp="1710803767726" />
+    <state x="0" y="3" key="CommitChangelistDialog2/0.0.1536.816@0.0.1536.816" timestamp="1710809914999" />
     <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1710803785754">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
