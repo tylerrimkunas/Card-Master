@@ -6,6 +6,7 @@ import Interfaces.Card;
 import Interfaces.Player;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class GoFishPlayer implements Player {
@@ -40,12 +41,43 @@ public class GoFishPlayer implements Player {
         return counter;
     }
 
+
+    public void gainCard(ClassicCard newCard) {
+        if(1 + has(newCard.getRank()) == 4) {
+            loseCards(3, newCard.getRank());
+            score++;
+        }
+        else cards.add(newCard);
+    }
+    public void gainCards(ClassicCard[] newCards) {
+        if(newCards.length + has(newCards[0].getRank()) == 4) {
+            loseCards(3, newCards[0].getRank());
+            score++;
+        }
+        else cards.addAll(Arrays.asList(newCards));
+    }
+
+    public ClassicCard[] loseCards(int count, ClassicCardValue value) {
+        ClassicCard[] lostCards = new ClassicCard[count];
+        int index = 0;
+        for(ClassicCard c: cards) {
+            if(c.getRank() == value) {
+                lostCards[index++] = c;
+                cards.remove(c);
+                if(index >= count) {
+                    break;
+                }
+            }
+        }
+        return lostCards;
+    }
+
     public void setCards(ArrayList<ClassicCard> cards) {
         this.cards = cards;
     }
 
     @Override
     public List<Card> getCards() {
-        return null;
+        return cards.isEmpty() ? null : (List) cards;
     }
 }

@@ -1,4 +1,5 @@
 package GoFish;
+import ClassicCards.ClassicCard;
 import ClassicCards.ClassicCardValue;
 import Interfaces.*;
 
@@ -24,10 +25,19 @@ public class GoFish implements Game {
         int playerIndex = 0;
         deal();
         while(!isDone) {
+            GoFishPlayer activePlayer = players.get(playerIndex);
             // TODO: show player's cards, prompt for asking which card to pick and who to ask, receive answer
             ClassicCardValue value = ClassicCardValue.KING;
-            GoFishPlayer p = players.get(1);
-            if(p.has(value) > 0);
+            GoFishPlayer askedPlayer = players.get(1);
+            int valueCount = askedPlayer.has(value);
+            if(valueCount > 0) { //asked player has cards with that rank case
+                ClassicCard[] transferredCards = askedPlayer.loseCards(valueCount, value);
+                activePlayer.gainCards(transferredCards);
+                continue; //Repeat active player's turn
+            }
+            else if(deck.getTopCard() != null){ //Go Fish case
+                activePlayer.gainCard((ClassicCard) deck.takeCard());
+            } 
             if(deck.getTopCard() == null) {
                 isDone = true;
             }
@@ -57,10 +67,6 @@ public class GoFish implements Game {
             }
         }
         return winner;
-    }
-
-    private int ask(int value, GoFishPlayer p) {
-        return 0;
     }
 
 }

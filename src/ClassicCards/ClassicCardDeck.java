@@ -25,7 +25,7 @@ public abstract class ClassicCardDeck implements CardDeck {
     }
 
     public Card takeCard() {
-        return (Card) stack.pop();
+        return stack.pop();
     }
 
     public abstract ArrayList<ClassicCard> deal();
