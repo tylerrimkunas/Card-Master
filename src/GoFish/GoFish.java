@@ -44,7 +44,6 @@ public class GoFish implements Game {
             int valueCount = askedPlayer.has(value);
             if(valueCount > 0) { //asked player has cards with that rank case
                 ClassicCard[] transferredCards = askedPlayer.loseCards(valueCount, value);
-                //TODO: show cards in command line
                 activePlayer.gainCards(transferredCards);
                 continue; //Repeat active player's turn
             }
