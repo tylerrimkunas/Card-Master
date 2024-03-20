@@ -21,12 +21,15 @@ public class Main {
                 game = new GoFish(players);
                 break;
             case 2:
+                System.out.println("COMING SOON!");
                 game = new BlackJack();
                 break;
             case 3:
+                System.out.println("COMING SOON!");
                 game = new Uno();
                 break;
             case 4:
+                System.out.println("COMING SOON!");
                 game = new War();
                 break;
             default:
