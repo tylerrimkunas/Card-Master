@@ -5,7 +5,12 @@ import Interfaces.Player;
 
 import java.util.List;
 
-public class GoFishBot implements Player {
+public class GoFishBot extends GoFishPlayer {
+    private String name;
+    public GoFishBot(String name) {
+        super(name);
+    }
+
     @Override
     public void takeTurn() {
 
