@@ -4,25 +4,29 @@ import Interfaces.Game;
 import Uno.Uno;
 import War.War;
 
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
         /*
         TODO: ADD UI
          */
-        int choice = 0;
+        System.out.println("Welcome to Card Master!\nWhich game would you like to play:\n1. Go Fish\n2. Blackjack\n3. Uno\n4. War");
+        Scanner stringInput = new Scanner(System.in);
+        int choice = Integer.parseInt(stringInput.nextLine());
         Game game;
         int players = 4;
         switch(choice) {
-            case 0:
+            case 1:
                 game = new GoFish(players);
                 break;
-            case 1:
+            case 2:
                 game = new BlackJack();
                 break;
-            case 2:
+            case 3:
                 game = new Uno();
                 break;
-            case 3:
+            case 4:
                 game = new War();
                 break;
             default:
