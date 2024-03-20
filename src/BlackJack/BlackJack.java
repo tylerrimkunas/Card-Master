@@ -11,4 +11,9 @@ public class BlackJack implements Game {
     public void play() {
 
     }
+
+    @Override
+    public void deal() {
+
+    }
 }

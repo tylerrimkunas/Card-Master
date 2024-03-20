@@ -10,4 +10,9 @@ public class War implements Game {
     public void play() {
 
     }
+
+    @Override
+    public void deal() {
+
+    }
 }
