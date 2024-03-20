@@ -4,6 +4,7 @@ import ClassicCards.ClassicCardValue;
 import Interfaces.*;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class GoFish implements Game {
     private ArrayList<GoFishPlayer> players;
@@ -16,13 +17,15 @@ public class GoFish implements Game {
         }
         deck = new GoFishDeck();
         deck.shuffle();
+        deal();
     }
 
     @Override
     public void play() {
         boolean isDone = false;
         int playerIndex = 0;
-        deal();
+        Scanner strInput = new Scanner(System.in);
+        Scanner intInput = new Scanner(System.in);
         while(!isDone) {
             GoFishPlayer activePlayer = players.get(playerIndex);
             // TODO: show player's cards, prompt for asking which card to pick and who to ask, receive answer
