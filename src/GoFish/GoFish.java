@@ -9,11 +9,10 @@ public class GoFish implements Game {
     private ArrayList<GoFishPlayer> players;
     private GoFishDeck deck;
     public GoFish(int numPlayers) {
-        // TODO: Ask for names either in main or here. Add choosing of Bots
-        players = new ArrayList<GoFishPlayer>();
-        for(int i = 0; i < numPlayers; i++) {
-            String name = "BOB"; // Temp variable
-            players.add(new GoFishPlayer(name));
+        players = new ArrayList<>();
+        players.add(new GoFishPlayer("Player 1"));
+        for(int i = 1; i < numPlayers; i++) {
+            players.add(new GoFishBot("Bot " + i));
         }
         deck = new GoFishDeck();
         deck.shuffle();
