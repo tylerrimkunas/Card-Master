@@ -28,9 +28,19 @@ public class GoFish implements Game {
         Scanner intInput = new Scanner(System.in);
         while(!isDone) {
             GoFishPlayer activePlayer = players.get(playerIndex);
-            // TODO: show player's cards, prompt for asking which card to pick and who to ask, receive answer
-            ClassicCardValue value = ClassicCardValue.KING;
-            GoFishPlayer askedPlayer = players.get(1);
+            GoFishPlayer askedPlayer;
+            ClassicCardValue value;
+            if(playerIndex == 0) { //Player's turn
+                System.out.println("Your cards are: " + activePlayer.cardsToString() + "\nWho would you like to ask? ");
+                String askName = strInput.nextLine();
+                askedPlayer = findPlayer(askName);
+                System.out.println("What card would you like to ask for? ");
+                value = ClassicCardValue.convertInt(intInput.nextInt());
+            }
+            else { //bot's turn
+                askedPlayer = findPlayer("Player 1");
+                value = ClassicCardValue.ACE; //TODO: Needs further implementation
+            }
             int valueCount = askedPlayer.has(value);
             if(valueCount > 0) { //asked player has cards with that rank case
                 ClassicCard[] transferredCards = askedPlayer.loseCards(valueCount, value);
