@@ -82,4 +82,13 @@ public class GoFish implements Game {
         return true;
     }
 
+    public GoFishPlayer findPlayer(String name) {
+        for(GoFishPlayer p: players) {
+            if(p.getName().equals(name)) {
+                return p;
+            }
+        }
+        return null;
+    }
+
 }
