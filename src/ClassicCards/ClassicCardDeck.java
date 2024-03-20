@@ -5,6 +5,7 @@ import Interfaces.CardDeck;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.EmptyStackException;
 import java.util.Stack;
 
 public abstract class ClassicCardDeck implements CardDeck {
@@ -21,11 +22,19 @@ public abstract class ClassicCardDeck implements CardDeck {
     }
 
     public ClassicCard getTopCard() {
-        return stack.peek();
+        try {
+            return stack.peek();
+        } catch(EmptyStackException e) {
+            return null;
+        }
     }
 
     public Card takeCard() {
-        return stack.pop();
+        try {
+            return stack.pop();
+        } catch(EmptyStackException e) {
+            return null;
+        }
     }
 
     public abstract ArrayList<ClassicCard> deal();
