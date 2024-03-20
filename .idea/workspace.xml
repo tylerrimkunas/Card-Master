@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="89fcd828-9c06-467a-b2ee-27b0d06524b9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/GoFish/GoFish.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoFish/GoFish.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/GoFish/GoFishBot.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/GoFish/GoFishBot.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +101,14 @@
       <option name="project" value="LOCAL" />
       <updated>1710809915687</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Changed gameOver functionality and made it a separate method.">
+      <created>1710888664952</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1710888664952</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -111,13 +119,14 @@
     <MESSAGE value="Added implementation of how GoFish is played and modifications/additions of methods to interact with players and the game. TODO: Add the Scanner class and I/O for the player to use. Possibly modify to use generic functions in main and not need the play() method" />
     <MESSAGE value="Fixed Compile time errors in GoFish.java" />
     <MESSAGE value="Fixed redundancies, Add gaining and losing card(s). More implementation of how game function." />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed redundancies, Add gaining and losing card(s). More implementation of how game function." />
+    <MESSAGE value="Changed gameOver functionality and made it a separate method." />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed gameOver functionality and made it a separate method." />
   </component>
   <component name="WindowStateProjectService">
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1709590588999">
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser" timestamp="1710890988520">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1709590588999" />
+    <state x="574" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.816@0.0.1536.816" timestamp="1710890988520" />
     <state x="499" y="188" key="#com.intellij.ide.util.PackageChooserDialog" timestamp="1708639029411">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -130,10 +139,10 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="523" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1536.816@0.0.1536.816" timestamp="1708640612262" />
-    <state x="0" y="3" key="CommitChangelistDialog2" timestamp="1710809914999">
+    <state x="0" y="3" key="CommitChangelistDialog2" timestamp="1710888663561">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state x="0" y="3" key="CommitChangelistDialog2/0.0.1536.816@0.0.1536.816" timestamp="1710809914999" />
+    <state x="0" y="3" key="CommitChangelistDialog2/0.0.1536.816@0.0.1536.816" timestamp="1710888663561" />
     <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1710803785754">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
@@ -142,5 +151,16 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="478" y="200" key="git4idea.merge.GitPullDialog/0.0.1536.816@0.0.1536.816" timestamp="1710803558222" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/GoFish/GoFishPlayer.java</url>
+          <line>30</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
