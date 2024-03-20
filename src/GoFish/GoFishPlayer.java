@@ -84,4 +84,12 @@ public class GoFishPlayer implements Player {
     public List<Card> getCards() {
         return cards.isEmpty() ? null : (List) cards;
     }
+
+    public String cardsToString() {
+        StringBuilder x = new StringBuilder();
+        for(ClassicCard c: cards) {
+            x.append(c.toString()).append(" | ");
+        }
+        return x.toString();
+    }
 }
