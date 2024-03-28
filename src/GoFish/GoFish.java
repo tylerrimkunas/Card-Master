@@ -20,6 +20,9 @@ public class GoFish implements Game {
         deal();
     }
 
+    /**
+     *
+     */
     @Override
     public void play() {
         boolean isDone = false;
@@ -31,11 +34,40 @@ public class GoFish implements Game {
             GoFishPlayer askedPlayer;
             ClassicCardValue value;
             if(playerIndex == 0) { //Player's turn
+                System.out.println("The players are: " + getAllNames());
                 System.out.println("Your cards are: " + activePlayer.cardsToString() + "\nWho would you like to ask? ");
-                String askName = strInput.nextLine();
+                boolean hasName = false;
+                String askName = "";
+                while(!hasName) { //TODO: could be method using lambda expression
+                    askName = strInput.nextLine();
+
+                    for(GoFishPlayer p: players) {
+                        if(askName.equals(p.getName())) {
+                            hasName = true;
+                            break;
+                        }
+                    }
+                    if(!hasName) {
+                        System.out.println("No player matches that name. Please Try again: ");
+                    }
+                }
                 askedPlayer = findPlayer(askName);
                 System.out.println("What card would you like to ask for? ");
                 value = ClassicCardValue.convertInt(intInput.nextInt());
+                boolean hasValue = false;
+                while(!hasValue) { //TODO: could be method using lambda expression
+                    value = ClassicCardValue.convertInt(intInput.nextInt());
+
+                    for(Card c: activePlayer.getCards()) {
+                        if(c.getValue() == value.toInt()) {
+                            hasValue = true;
+                            break;
+                        }
+                    }
+                    if(!hasValue) {
+                        System.out.println("You do not have this value. Please Try again: ");
+                    }
+                }
             }
             else { //bot's turn
                 askedPlayer = findPlayer("Player 1");
@@ -64,6 +96,10 @@ public class GoFish implements Game {
     }
 
     // TODO: deal either here or in GoFishDeck
+
+    /**
+     *
+     */
     @Override
     public void deal() {
         for(GoFishPlayer p : players) {
@@ -71,6 +107,10 @@ public class GoFish implements Game {
         }
     }
 
+    /**
+     *
+     * @return
+     */
     public Player determineWinner() {
         GoFishPlayer winner = players.get(0);
         for(GoFishPlayer p: players) {
@@ -81,6 +121,10 @@ public class GoFish implements Game {
         return winner;
     }
 
+    /**
+     *
+     * @return
+     */
     public boolean isGameOver() {
         if(deck.getTopCard() != null)
             return false;
@@ -91,6 +135,11 @@ public class GoFish implements Game {
         return true;
     }
 
+    /**
+     *
+     * @param name
+     * @return
+     */
     public GoFishPlayer findPlayer(String name) {
         for(GoFishPlayer p: players) {
             if(p.getName().equals(name)) {
@@ -98,6 +147,18 @@ public class GoFish implements Game {
             }
         }
         return null;
+    }
+
+    /**
+     *
+     * @return
+     */
+    public String getAllNames() {
+        StringBuilder str = new StringBuilder();
+        for(GoFishPlayer p: players) {
+            str.append(p.getName()).append(" | ");
+        }
+        return str.toString();
     }
 
 }
