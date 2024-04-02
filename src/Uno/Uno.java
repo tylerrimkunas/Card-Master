@@ -181,6 +181,12 @@ public class Uno implements Game {
                 ((ActionCard) picked).doAction(this);
             }
             last_card = picked;
+            if(cards.isEmpty()) {
+                Collections.shuffle(discard);
+                Stack<Card> t = cards;
+                cards = discard;
+                discard = t;
+            }
             discard.push(picked);
             if(++pIndex >= players.size()) {
                 pIndex = 0;
