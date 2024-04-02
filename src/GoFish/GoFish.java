@@ -56,7 +56,7 @@ public class GoFish implements Game {
                 value = ClassicCardValue.convertInt(intInput.nextInt());
                 boolean hasValue = false;
                 while(!hasValue) { //TODO: could be method using lambda expression
-                    value = ClassicCardValue.convertInt(intInput.nextInt());
+                    value = ClassicCardValue.convertInt(intInput.nextInt()); //TODO: BAD CODE!!!!!
 
                     for(Card c: activePlayer.getCards()) {
                         if(c.getValue() == value.toInt()) {
@@ -73,13 +73,18 @@ public class GoFish implements Game {
                 askedPlayer = findPlayer("Player 1");
                 value = ClassicCardValue.ACE; //TODO: Needs further implementation
             }
+            System.out.println(activePlayer.getName() + " asked " + askedPlayer.getName() + " for " + value);
             int valueCount = askedPlayer.has(value);
             if(valueCount > 0) { //asked player has cards with that rank case
+                System.out.println(askedPlayer.getName() + " has " + valueCount + " " + value);
                 ClassicCard[] transferredCards = askedPlayer.loseCards(valueCount, value);
+                System.out.println(askedPlayer.getName() + " lost " + valueCount + " " + value);
                 activePlayer.gainCards(transferredCards);
+                System.out.println(activePlayer.getName() + " gained " + valueCount + " " + value);
                 continue; //Repeat active player's turn
             }
             else if(deck.getTopCard() != null){ //Go Fish case
+                System.out.println(askedPlayer.getName() + " says GO FISH!");
                 activePlayer.gainCard((ClassicCard) deck.takeCard());
             } 
             if(isGameOver()) {
