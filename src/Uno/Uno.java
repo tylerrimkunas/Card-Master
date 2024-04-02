@@ -142,10 +142,10 @@ public class Uno implements Game {
         last_card = cards.pop();
         discard.push(last_card);
 
-        Player user = new UnoPlayer("USER", deal()); //TODO: Add more implementation of UNO players and bots. Needs names, functionality etc.
-        Player bot1 = new UnoBot("BOT1", deal());
-        Player bot2 = new UnoBot("BOT2", deal());
-        Player bot3 = new UnoBot("BOT3", deal());
+        players.add(new UnoPlayer("USER", deal())); //TODO: Add more implementation of UNO players and bots. Needs names, functionality etc.
+        players.add(new UnoBot("BOT1", deal()));
+        players.add(new UnoBot("BOT2", deal()));
+        players.add(new UnoBot("BOT3", deal()));
     }
     @Override
     public void play() {
