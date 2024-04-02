@@ -58,56 +58,48 @@ enum values {
 
         };
     }
-    Consumer<?> toAction() {
-        switch(this) {
-            case ZERO:
-            case SEVEN:
-            case SKIP:
-            case PLUS_2:
-            case REVERSE:
-            default:
-                return null;
-
-        }
-    }
 }
 
 enum w_actions {
     CHANGE_COLOR,
     DRAW_4;
     int toInt() {
-        return -1;
-    }
-    Consumer<?> toAction() {
-        switch(this) {
-            case CHANGE_COLOR:
-            case DRAW_4:
-        }
-        return null;
+        return switch (this) {
+            case DRAW_4 -> -2;
+            case CHANGE_COLOR -> -1;
+        };
     }
 }
 
 public class Uno implements Game {
-    private Stack<ActionCard> cards;
-    private Stack<ActionCard> discard;
+    private Stack<Card> cards;
+    private Stack<Card> discard;
     private ArrayList<Player> players;
     private boolean reverse;
-    private ActionCard last_card;
+    private Card last_card;
     public Uno() {
         cards = new Stack<>();
         discard = new Stack<>();
         players = new ArrayList<>();
-        reverse = false;
+        reverse = false; //TODO: Need implementation of settings
         for(colors c: colors.values()) {
             StringBuilder s = new StringBuilder();
             s.append(c).append(" ");
             if(c == colors.WILD) {
                 for(w_actions w: w_actions.values()) {
                     s.append(w);
-                    ActionCard card1 = new ActionCard(c.toChar(), w.toInt(), s.toString(), w.toAction());
-                    ActionCard card2 = new ActionCard(c.toChar(), w.toInt(), s.toString(), w.toAction());
-                    ActionCard card3 = new ActionCard(c.toChar(), w.toInt(), s.toString(), w.toAction());
-                    ActionCard card4 = new ActionCard(c.toChar(), w.toInt(), s.toString(), w.toAction());
+                    Card card1, card2, card3, card4;
+                    if(w == w_actions.DRAW_4) {
+                        card1 = new Draw4Card(c.toChar(), w.toInt(), s.toString());
+                        card2 = new Draw4Card(c.toChar(), w.toInt(), s.toString());
+                        card3 = new Draw4Card(c.toChar(), w.toInt(), s.toString());
+                        card4 = new Draw4Card(c.toChar(), w.toInt(), s.toString());
+                    } else {
+                        card1 = new ChangeColorCard(c.toChar(), w.toInt(), s.toString());
+                        card2 = new ChangeColorCard(c.toChar(), w.toInt(), s.toString());
+                        card3 = new ChangeColorCard(c.toChar(), w.toInt(), s.toString());
+                        card4 = new ChangeColorCard(c.toChar(), w.toInt(), s.toString());
+                    }
                     cards.push(card1);
                     cards.push(card2);
                     cards.push(card3);
@@ -117,8 +109,30 @@ public class Uno implements Game {
             }
             else for(values v: values.values()) {
                 s.append(v);
-                ActionCard card1 = new ActionCard(c.toChar(), v.toInt(), s.toString(), v.toAction());
-                ActionCard card2 = new ActionCard(c.toChar(), v.toInt(), s.toString(), v.toAction());
+                Card card1, card2;
+                if(v == values.PLUS_2) {
+                    card1 = new Plus2Card(c.toChar(), v.toInt(), s.toString());
+                    card2 = new Plus2Card(c.toChar(), v.toInt(), s.toString());
+                }
+                else if(v == values.REVERSE) {
+                    card1 = new ReverseCard(c.toChar(), v.toInt(), s.toString());
+                    card2 = new ReverseCard(c.toChar(), v.toInt(), s.toString());
+                }
+                else if(v == values.SKIP) {
+                    card1 = new SkipCard(c.toChar(), v.toInt(), s.toString());
+                    card2 = new SkipCard(c.toChar(), v.toInt(), s.toString());
+                }
+                else if(v == values.ZERO && false) { //TODO: implementation of options in main for specific setting such as zeros and sevens special abilities. always false for now
+                    card1 = new ZeroCard(c.toChar(), v.toInt(), s.toString());
+                    card2 = new ZeroCard(c.toChar(), v.toInt(), s.toString());
+                }
+                else if(v == values.SEVEN && false) {
+                    card1 = new SevenCard(c.toChar(), v.toInt(), s.toString());
+                    card2 = new SevenCard(c.toChar(), v.toInt(), s.toString());
+                } else {
+                    card1 = new Card(c.toChar(), v.toInt(), s.toString());
+                    card2 = new Card(c.toChar(), v.toInt(), s.toString());
+                }
                 cards.push(card1);
                 cards.push(card2);
             }

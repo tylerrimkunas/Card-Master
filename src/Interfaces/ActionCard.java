@@ -2,14 +2,10 @@ package Interfaces;
 
 import java.util.function.Consumer;
 
-public class ActionCard extends Card {
-    private Consumer<?> action;
-    public ActionCard(char type, int value, String name, Consumer<?> action) {
+public abstract class ActionCard extends Card {
+    public ActionCard(char type, int value, String name) {
         super(type, value, name);
-        this.action = action;
     }
 
-    public Consumer<?> getAction() {
-        return action;
-    }
+    public abstract void doAction(Game g);
 }
