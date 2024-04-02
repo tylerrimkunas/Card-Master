@@ -16,19 +16,13 @@ enum colors {
     YELLOW,
     WILD;
     char toChar() {
-        switch(this) {
-            case RED:
-                return 'R';
-            case BLUE:
-                return 'B';
-            case GREEN:
-                return 'G';
-            case YELLOW:
-                return 'Y';
-            case WILD:
-                return 'W';
-        }
-        return 0;
+        return switch (this) {
+            case RED -> 'R';
+            case BLUE -> 'B';
+            case GREEN -> 'G';
+            case YELLOW -> 'Y';
+            case WILD -> 'W';
+        };
     }
 }
 
@@ -47,35 +41,22 @@ enum values {
     PLUS_2,
     SKIP;
     int toInt() {
-        switch(this) {
-            case ZERO:
-                return 0;
-            case ONE:
-                return 1;
-            case TWO:
-                return 2;
-            case THREE:
-                return 3;
-            case FOUR:
-                return 4;
-            case FIVE:
-                return 5;
-            case SIX:
-                return 6;
-            case SEVEN:
-                return 7;
-            case EIGHT:
-                return 8;
-            case NINE:
-                return 9;
-            case REVERSE:
-                return 10;
-            case PLUS_2:
-                return 11;
-            case SKIP:
-                return 12;
-        }
-        return -1;
+        return switch (this) {
+            case ZERO -> 0;
+            case ONE -> 1;
+            case TWO -> 2;
+            case THREE -> 3;
+            case FOUR -> 4;
+            case FIVE -> 5;
+            case SIX -> 6;
+            case SEVEN -> 7;
+            case EIGHT -> 8;
+            case NINE -> 9;
+            case REVERSE -> 10;
+            case PLUS_2 -> 11;
+            case SKIP -> 12;
+
+        };
     }
     Consumer<?> toAction() {
         switch(this) {
