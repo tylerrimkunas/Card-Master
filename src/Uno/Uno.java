@@ -142,14 +142,50 @@ public class Uno implements Game {
         last_card = cards.pop();
         discard.push(last_card);
 
-        players.add(new UnoPlayer("USER", deal())); //TODO: Add more implementation of UNO players and bots. Needs names, functionality etc.
+        players.add(new UnoPlayer("USER", deal())); //TODO: Add more implementation of UNO players and bots. Needs functionality etc.
         players.add(new UnoBot("BOT1", deal()));
         players.add(new UnoBot("BOT2", deal()));
         players.add(new UnoBot("BOT3", deal()));
     }
     @Override
     public void play() {
-
+        Player winner;
+        int pIndex = 0;
+        while(true) {
+            Card picked;
+            if(players.get(pIndex) instanceof UnoPlayer) {
+                UnoPlayer activeP = (UnoPlayer) players.get(pIndex);
+                //TODO: ask for card
+                while(true) {
+                    picked = activeP.takeTurn(); //TODO: player either uses card from their deck or takes from pile
+                    if(picked.getValue() != last_card.getValue() && picked.getType() != last_card.getType() && picked.getType() != 'W') {
+                        //TODO: error message
+                        continue;
+                    }
+                    break;
+                }
+                if(!activeP.hasCards()) {
+                    winner = activeP;
+                    break;
+                }
+            }
+            else {
+                UnoBot activeB = (UnoBot) players.get(pIndex);
+                picked = activeB.takeTurn(); //TODO: Bot either uses card from their deck or takes from pile
+                if(!activeB.hasCards()) {
+                    winner = activeB;
+                    break;
+                }
+            }
+            if(picked instanceof ActionCard) {
+                ((ActionCard) picked).doAction(this);
+            }
+            last_card = picked;
+            discard.push(picked);
+            if(++pIndex >= players.size()) {
+                pIndex = 0;
+            }
+        }
     }
 
     @Override
