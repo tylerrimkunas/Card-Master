@@ -1,6 +1,7 @@
 package Uno;
 
 import Interfaces.ActionCard;
+import Interfaces.Card;
 import Interfaces.Game;
 import Interfaces.Player;
 
@@ -140,6 +141,11 @@ public class Uno implements Game {
         Collections.shuffle(cards);
         last_card = cards.pop();
         discard.push(last_card);
+
+        Player user = new UnoPlayer("USER", deal()); //TODO: Add more implementation of UNO players and bots. Needs names, functionality etc.
+        Player bot1 = new UnoBot("BOT1", deal());
+        Player bot2 = new UnoBot("BOT2", deal());
+        Player bot3 = new UnoBot("BOT3", deal());
     }
     @Override
     public void play() {
@@ -147,7 +153,11 @@ public class Uno implements Game {
     }
 
     @Override
-    public void deal() {
-
+    public ArrayList<Card> deal() {
+        ArrayList<Card> c = new ArrayList<>();
+        for(int i = 0; i < 5; i++) {
+            c.add(cards.pop());
+        }
+        return c;
     }
 }
