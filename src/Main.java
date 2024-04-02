@@ -16,25 +16,22 @@ public class Main {
         int choice = Integer.parseInt(stringInput.nextLine());
         Game game;
         int players = 4;
-        switch(choice) {
-            case 1:
-                game = new GoFish(players);
-                break;
-            case 2:
+        game = switch (choice) {
+            case 1 -> new GoFish(players);
+            case 2 -> {
                 System.out.println("COMING SOON!");
-                game = new BlackJack();
-                break;
-            case 3:
+                yield new BlackJack();
+            }
+            case 3 -> {
                 System.out.println("COMING SOON!");
-                game = new Uno();
-                break;
-            case 4:
+                yield new Uno();
+            }
+            case 4 -> {
                 System.out.println("COMING SOON!");
-                game = new War();
-                break;
-            default:
-                throw new IllegalStateException("Unexpected value: " + choice);
-        }
+                yield new War();
+            }
+            default -> throw new IllegalStateException("Unexpected value: " + choice);
+        };
         game.play();
     }
 }
