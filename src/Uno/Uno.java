@@ -8,7 +8,6 @@ import Interfaces.Player;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Stack;
-import java.util.function.Consumer;
 
 enum colors {
     RED,
@@ -78,11 +77,13 @@ public class Uno implements Game {
     private ArrayList<Player> players;
     private boolean reverse;
     private Card last_card;
+    private int pIndex;
     public Uno() {
         cards = new Stack<>();
         discard = new Stack<>();
         players = new ArrayList<>();
         reverse = false; //TODO: Need implementation of settings
+        pIndex = 0;
         for(colors c: colors.values()) {
             StringBuilder s = new StringBuilder();
             s.append(c).append(" ");
@@ -150,7 +151,6 @@ public class Uno implements Game {
     @Override
     public void play() {
         Player winner;
-        int pIndex = 0;
         while(true) {
             Card picked;
             if(players.get(pIndex) instanceof UnoPlayer) {
@@ -188,9 +188,7 @@ public class Uno implements Game {
                 discard = t;
             }
             discard.push(picked);
-            if(++pIndex >= players.size()) {
-                pIndex = 0;
-            }
+            next();
         }
     }
 
@@ -201,5 +199,18 @@ public class Uno implements Game {
             c.add(cards.pop());
         }
         return c;
+    }
+
+    private void next() {
+        if(reverse) {
+            if(--pIndex < 0) {
+                pIndex = players.size() - 1;
+            }
+        }
+        else {
+            if(++pIndex >= players.size()) {
+                pIndex = 0;
+            }
+        }
     }
 }
