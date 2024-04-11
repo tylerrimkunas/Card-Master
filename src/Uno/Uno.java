@@ -150,18 +150,25 @@ public class Uno implements Game {
     }
     @Override
     public void play() {
-        Player winner;
+        Player winner = null;
         while(true) {
             Card picked;
             if(players.get(pIndex) instanceof UnoPlayer) {
                 UnoPlayer activeP = (UnoPlayer) players.get(pIndex);
-                //TODO: ask for card
                 while(true) {
-                    picked = activeP.takeTurn(); //TODO: player either uses card from their deck or takes from pile
-                    if(picked.getValue() != last_card.getValue() && picked.getType() != last_card.getType() && picked.getType() != 'W') {
-                        //TODO: error message
+                    System.out.println("Last card: " + last_card + "\nYour cards: " + activeP.cardsToString() + "\nPlease pick a card using the number indicated or put -1 to pick up a card: ");
+                    picked = activeP.takeTurn();
+                    if(picked == null) {
+                        System.out.println(activeP.getName() + " has chosen to pick up a card");
+                        activeP.addCard(cards.pop());
                         continue;
                     }
+                    else if(picked.getValue() != last_card.getValue() && picked.getType() != last_card.getType() && picked.getType() != 'W') {
+                        System.out.println("Card cannot match with the last card. Please try again");
+                        activeP.addCard(picked);
+                        continue;
+                    }
+                    System.out.println(activeP.getName() + "has chosen " + picked);
                     break;
                 }
                 if(!activeP.hasCards()) {
@@ -171,7 +178,16 @@ public class Uno implements Game {
             }
             else {
                 UnoBot activeB = (UnoBot) players.get(pIndex);
-                picked = activeB.takeTurn(); //TODO: Bot either uses card from their deck or takes from pile
+                while(true) {
+                    picked = activeB.takeTurn(last_card); //TODO: Bot either uses card from their deck or takes from pile
+                    if(picked == null) {
+                        activeB.addCard(cards.pop());
+                        System.out.println(activeB.getName() + " has chosen to pick up a card");
+                        continue;
+                    }
+                    break;
+                }
+                System.out.println(activeB.getName() + "has chosen " + picked);
                 if(!activeB.hasCards()) {
                     winner = activeB;
                     break;
@@ -199,6 +215,10 @@ public class Uno implements Game {
             c.add(cards.pop());
         }
         return c;
+    }
+
+    public Player getCurrentPlayer() {
+        return players.get(pIndex);
     }
 
     private void next() {

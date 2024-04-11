@@ -5,6 +5,7 @@ import Interfaces.Player;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class UnoPlayer implements Player {
     private ArrayList<Card> cards;
@@ -20,14 +21,36 @@ public class UnoPlayer implements Player {
 
     public String cardsToString() {
         StringBuilder s = new StringBuilder();
+        int i = 1;
         for(Card c: cards) {
-            s.append(c).append(" | ");
+            s.append(i++).append(c).append(" | ");
         }
         return s.toString();
     }
     @Override
-    public void takeTurn() {
+    public Card takeTurn() {
+        Scanner inputInt = new Scanner(System.in);
+        int choice = inputInt.nextInt();
+        if(choice == -1) {
+            return null;
+        }
+        if(choice < 1 || choice >= cards.size()) {
+            System.out.println("Out of Bounds! Try again.");
+            return takeTurn();
+        }
+        else {
+            Card c = cards.get(choice - 1);
+            cards.remove(choice -1);
+            return c;
+        }
+    }
 
+    public boolean hasCards() {
+        return cards.isEmpty();
+    }
+
+    public void addCard(Card newCard) {
+        cards.add(newCard);
     }
 
     @Override

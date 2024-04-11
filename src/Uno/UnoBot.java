@@ -18,12 +18,26 @@ public class UnoBot implements Player {
         return name;
     }
     @Override
-    public void takeTurn() {
+    public Card takeTurn(Card last_card) {
+        for(Card c: cards) {
+            int x = c.compareTo(last_card);
+            if(x < 3) {
+                cards.remove(c);
+                return c;
+            }
+        }
+        return null;
+    }
 
+    public boolean hasCards() {
+        return cards.isEmpty();
     }
 
     @Override
     public List<Card> getCards() {
         return null;
+    }
+    public void addCard(Card newCard) {
+        cards.add(newCard);
     }
 }
