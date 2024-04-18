@@ -221,7 +221,7 @@ public class Uno implements Game {
         return players.get(pIndex);
     }
 
-    private void next() {
+    public void next() {
         if(reverse) {
             if(--pIndex < 0) {
                 pIndex = players.size() - 1;
@@ -233,4 +233,35 @@ public class Uno implements Game {
             }
         }
     }
+
+    public void useReverse() {
+        reverse = !reverse;
+    }
+
+    public void useChangeColor() {
+        UnoPlayer p = (UnoPlayer) getCurrentPlayer();
+        char color =  p.askColor();
+        last_card = new Card(color, last_card.getValue(), last_card.toString());
+    }
+
+    public void useDraw(int num) {
+        int i;
+        if(reverse) {
+            i = pIndex-1;
+            if(i < 0) {
+                i = players.size() - 1;
+            }
+        }
+        else {
+            i = pIndex + 1;
+            if(i >= players.size()) {
+                i = 0;
+            }
+        }
+        UnoPlayer p = (UnoPlayer) players.get(i);
+        for(int j = 0; j < num; j++) {
+            p.addCard(cards.pop());
+        }
+    }
+
 }
