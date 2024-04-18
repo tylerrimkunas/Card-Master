@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class UnoPlayer implements Player {
+public class UnoPlayer extends UnoBeing {
     private ArrayList<Card> cards;
     private String name;
     public UnoPlayer(String name, ArrayList<Card> cards) {
@@ -45,16 +45,15 @@ public class UnoPlayer implements Player {
         }
     }
 
-    public boolean hasCards() {
-        return cards.isEmpty();
-    }
-
-    public void addCard(Card newCard) {
-        cards.add(newCard);
-    }
-
     @Override
-    public List<Card> getCards() {
-        return null;
+    public char askColor() {
+        Scanner inputStr = new Scanner(System.in);
+        System.out.println("Select what color you would like using the characters from this list:\nR - Red\nB - Blue\nG - Green\nY - Yellow\n");
+        char color = (char) inputStr.nextByte();
+        if(color != 'R' && color != 'B' && color != 'G' && color != 'Y') {
+            System.out.println("Character invalid. Please try again");
+            return askColor();
+        }
+        return color;
     }
 }
