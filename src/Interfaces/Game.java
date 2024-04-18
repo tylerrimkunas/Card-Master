@@ -1,6 +1,8 @@
 package Interfaces;
 
+import java.util.ArrayList;
+
 public interface Game {
     void play();
-    void deal();
+    ArrayList<Card> deal();
 }

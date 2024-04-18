@@ -8,15 +8,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class UnoPlayer extends UnoBeing {
-    private ArrayList<Card> cards;
-    private String name;
     public UnoPlayer(String name, ArrayList<Card> cards) {
-        this.name = name;
-        this.cards = cards;
-    }
-
-    public String getName() {
-        return name;
+        super(name, cards);
     }
 
     public String cardsToString() {

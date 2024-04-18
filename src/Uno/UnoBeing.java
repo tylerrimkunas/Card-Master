@@ -13,16 +13,11 @@ public abstract class UnoBeing implements Player {
         this.name = name;
         this.cards = cards;
     }
-
     public String getName() {
         return name;
     }
-
-    @Override
-    public abstract void takeTurn();
-
+    public abstract Card takeTurn(Card last_card);
     public abstract char askColor();
-
     public boolean hasNoCards() {
         return cards.isEmpty();
     }
