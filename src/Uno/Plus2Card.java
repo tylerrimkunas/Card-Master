@@ -12,6 +12,9 @@ public class Plus2Card extends ActionCard {
 
     @Override
     public void doAction(Game g) {
-
+        if(g instanceof Uno ug) {
+            ug.useDraw(2);
+            ug.next();
+        }
     }
 }

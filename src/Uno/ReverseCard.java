@@ -12,6 +12,8 @@ public class ReverseCard extends ActionCard {
 
     @Override
     public void doAction(Game g) {
-
+        if(g instanceof Uno ug) {
+            ug.useReverse();
+        }
     }
 }
