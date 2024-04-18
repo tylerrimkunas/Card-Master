@@ -14,6 +14,10 @@ public abstract class UnoBeing implements Player {
         this.cards = cards;
     }
 
+    public String getName() {
+        return name;
+    }
+
     @Override
     public abstract void takeTurn();
 
