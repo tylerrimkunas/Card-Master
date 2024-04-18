@@ -171,7 +171,7 @@ public class Uno implements Game {
                     System.out.println(activeP.getName() + "has chosen " + picked);
                     break;
                 }
-                if(!activeP.hasCards()) {
+                if(activeP.hasNoCards()) {
                     winner = activeP;
                     break;
                 }
@@ -188,7 +188,7 @@ public class Uno implements Game {
                     break;
                 }
                 System.out.println(activeB.getName() + "has chosen " + picked);
-                if(!activeB.hasCards()) {
+                if(activeB.hasNoCards()) {
                     winner = activeB;
                     break;
                 }

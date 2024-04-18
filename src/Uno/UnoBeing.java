@@ -23,8 +23,8 @@ public abstract class UnoBeing implements Player {
 
     public abstract char askColor();
 
-    public boolean hasCards() {
-        return !cards.isEmpty();
+    public boolean hasNoCards() {
+        return cards.isEmpty();
     }
 
     public void addCard(Card newCard) {
